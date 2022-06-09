@@ -23,9 +23,14 @@
     ]
   },
   "dependencies": {
+    "@chakra-ui/react": "^2.2.1",
+    "@emotion/react": "11",
+    "@emotion/styled": "11",
+    "framer-motion": "6",
     "next": "latest",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "styled-components": "^5.3.5"
   },
   "devDependencies": {
     "@testing-library/react": "^13.3.0",
