@@ -1,0 +1,262 @@
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Quicksand', sans-serif;
+  line-height: 1.6;
+  font-smooth: always;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+{
+  color: #2F44A9;
+  font-family: 'Kanit', sans-serif;
+}
+
+section {
+  padding: 1em 0;
+}
+
+.grid-container {
+  overflow: hidden;
+  display: grid;
+  column-gap: 5px;
+  grid-template-columns: auto auto auto;
+  justify-content: space-evenly;
+}
+
+.split {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1em;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.split > * {
+  -ms-flex-preferred-size: 30%;
+      flex-basis: 30%;
+  min-width: 15em;
+}
+
+.spacing > * + * {
+  margin-top: var(--spacer, 10rem);
+}
+
+.btn {
+  display: inline-block;
+  margin: auto;
+  margin-top: 0.55em;
+  text-decoration: none;
+  color: var(--clr-text, #2F44A9);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 1rem;
+  padding: .5em 1.25em;
+  background: var(--clr-accent, blue);
+  border-radius: .5em;
+  -webkit-transition: opacity 250ms linear,
+ -webkit-transform 250ms ease-in-out;
+  transition: opacity 250ms linear,
+ -webkit-transform 250ms ease-in-out;
+  transition: transform 250ms ease-in-out,
+ opacity 250ms linear;
+  transition: transform 250ms ease-in-out,
+ opacity 250ms linear,
+ -webkit-transform 250ms ease-in-out;
+}
+
+.btn:hover,
+.btn:focus {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  opacity: .9;
+}
+
+.primary-title {
+  font-size: 4rem;
+  font-size: clamp(3rem, calc(5vw + 1rem), 4.5rem);
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.section-title {
+  text-align: center;
+  font-size: clamp(2.5rem, calc(5vw + 1rem), 4rem);
+  line-height: 1;
+  color: #2F44A9;
+  margin-bottom: 5rem;
+}
+
+.banner {
+  background: white;
+  padding: 1em;
+  border-radius: 1em;
+  margin-bottom: 5em;
+  text-align: center;
+  width: 100%;
+  max-width: 65em;
+  margin: auto auto;
+}
+
+.texto-banner {
+  position: relative;
+  text-justify: auto;
+  text-align: justify;
+  top: -200px;
+  right: -560px;
+}
+
+#nav-bar {
+  display: grid;
+  grid-template-columns: 45% 55%;
+  background-color: white;
+  padding: 0.25em;
+  box-shadow: 0px 0.25px #444444;
+  margin-bottom: 15px;
+}
+
+ul li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  display: inline-block;
+}
+
+li {
+  float: right;
+}
+
+li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+  background-color: #2F44A9;
+}
+
+.active {
+  background-color: #04AA6D;
+  color: white;
+  float: left;
+}
+
+li:last-child {
+  border-bottom: none;
+}
+
+footer{
+  color: #5B5B5B;
+  text-align: center;
+}
+
+.clase {
+  width: 18em;
+  height: 25em;
+  padding: 0.5em;
+  border-radius: 1em;
+  margin-bottom: 4em;
+  text-align: center;
+  float: left;
+}
+
+.logo__creativate {
+  margin: -5em 0 0 0;
+}
+
+.icono {
+  margin: 0em 0 0 0;
+}
+
+@media (min-width: 45em) {
+  .clase {
+    text-align: center;
+    margin-bottom: 1em;
+    margin-left: 1em;
+  }
+  .clase__title {
+    margin: 0;
+  }
+  .clase__image {
+    width: 18em;
+    height: 20em;
+  }
+  .programacion-image {
+    display: inline;
+    margin-top: 25px;
+    margin-bottom: 20px;
+    width: 100%
+  }
+
+  .crativate-image{
+    float: right;
+    display: inline;
+    margin-top: 25px;
+    width: 35%
+  }
+
+  .logo__creativate {
+    float: left;
+    width: 15%;
+    margin: 0 -10em 0 0;
+  }
+
+  .icono {
+    width: 75%;
+    margin: 0 0 0 0em;
+  }
+
+  .banner__image {   
+    display: block;
+    margin-left: auto;
+    margin-top: auto;
+    width: 100%
+  }
+}
+
+.idiomas {
+  background: #2F44A9;
+  --clr-inner: #faa700;
+  --clr-outer: #e48d00;
+  --clr-accent: #F8F8F8;
+}
+
+.programacion {
+  background: #01C3CC;
+  --clr-inner: #faa700;
+  --clr-outer: #e48d00;
+  --clr-accent: #F8F8F8;
+}
+
+.musica {
+  background: #E5CEAE;
+  --clr-inner: #faa700;
+  --clr-outer: #e48d00;
+  --clr-accent: #F8F8F8;
+}
+/*# sourceMappingURL=main.css.map */
