@@ -1,4 +1,6 @@
 import { Button, useToast } from '@chakra-ui/react'
+import ToastError from '@helpers/toast-error'
+import ToastSuccess from '@helpers/toast-success'
 import login from 'helpers/login'
 import {
   LoginData,
@@ -9,7 +11,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { useAppDispatch } from 'store/hook'
 import { setLoginData } from 'store/reducers/user'
@@ -39,14 +41,9 @@ const LoginForm = ({
     try {
       if (status === 200 || status === 201 || status === 204) {
         // toast success
-        toast({
-          position: 'top-right',
-          title: 'Éxito',
-          description: responseData.message,
-          status: 'success',
-          duration: 5000,
-          isClosable: true
-        })
+
+        ToastSuccess(toast, responseData.message)
+
         // set user data
         dispatch(
           setLoginData({
@@ -67,28 +64,15 @@ const LoginForm = ({
         button?.focus()
 
         // toast error
-        toast({
-          position: 'top-right',
-          title: 'Error',
-          description: responseData.message,
-          status: 'error',
-          duration: 5000,
-          isClosable: true
-        })
+        ToastError(toast, responseData.message)
 
         // set error state
         setIsLoading(false)
       }
     } catch (err) {
       setIsLoading(false)
-      toast({
-        position: 'top-right',
-        title: 'Error',
-        description: 'Algo salió mal. Intenta de nuevo',
-        status: 'error',
-        duration: 5000,
-        isClosable: true
-      })
+
+      ToastError(toast, 'Algo salió mal. Intenta de nuevo')
     }
   }
 

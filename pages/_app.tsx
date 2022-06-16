@@ -3,6 +3,7 @@ import { ChakraProvider, extendTheme } from '@chakra-ui/react'
 import { Provider } from 'react-redux'
 import { store, wrapper } from 'store/store'
 import '../styles/globals.css'
+import '../styles/landing.css'
 
 // 2. Extend the theme to include custom colors, fonts, etc
 const colors = {
